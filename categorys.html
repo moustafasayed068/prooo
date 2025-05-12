@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Social Media Forum</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li class="exe">
+      <div class="menu-toggle" onclick="toggleSidebar()" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </li>
+    <li><a href="home.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+    <li><a href="messanger.html"><i class="fab fa-facebook-messenger"></i> <span>Messenger</span></a></li>
+    <li><a href="Profile.html"><i class="fas fa-user"></i> <span>Profile</span></a></li>
+    <li><a href="categorys.html"><i class="fas fa-list"></i> <span>categorys</span></a></li>
+    <li><i class="fas fa-sign-out-alt"></i> <span>Logout</span></li>
+  </ul>
+</div>
+
+<header class="navbar">
+  <nav class="nav-container">
+    <div class="nav-icons">
+      <a href="home.html"><i class="fas fa-home"></i></a>
+      <i class="fas fa-search" onclick="toggleSearch()"></i>
+
+      <!-- Search input -->
+      <input type="text" id="searchInput" placeholder="اكتب للبحث..." onkeyup="search()" style="display: none;">
+
+      <i class="fab fa-facebook-messenger"></i>
+      <a href="post.html"><i class="fas fa-plus-circle" title="Add Post"></i></a>
+    </div>
+    <div id="results"></div>
+  </nav>
+</header>
+<form id="categoryForm">
+    <h3>إضافة كاتيجوري جديدة</h3>
+
+    <label for="categoryName"> categoryName:</label><br>
+    <input type="text" id="categoryName" required><br><br>
+
+    <label for="categoryDescription">Description:</label><br>
+    <textarea id="categoryDescription" rows="4"></textarea><br><br>
+
+    <label for="categoryImage">صورة():</label><br>
+    <input type="file" id="categoryImage" accept="image/*"><br><br>
+
+    <button type="submit">إضافة</button>
+  </form>
+
+  <div id="categoryList"></div>
+
+  <!-- ✅ الكاتيجوريز -->
+  <section class="categories">
+    <div class="category"><i class="fas fa-cat"></i> عام</div>
+    <div class="category"><i class="fas fa-futbol"></i> رياضة</div>
+    <div class="category"><i class="fas fa-microchip"></i> تكنولوجيا</div>
+    <div class="category"><i class="fas fa-film"></i> ترفيه</div>
+    <div class="category"><i class="fas fa-utensils"></i> طبخ</div>
+    <div class="category"><i class="fas fa-heart"></i> حب</div>
+  </section>
+<section>
+  <div class="categories" id="categoryList">
+    <!-- الكاتيجوريز هتظهر هنا تلقائيًا -->
+  </div>
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
