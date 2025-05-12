@@ -44,12 +44,13 @@
   <form id="postForm">
     <textarea id="postContent" placeholder="اكتب هنا..." required></textarea><br><br>
     <input type="file" id="mediaInput" accept="image/*,video/*"><br><br>
-    <select id="categorySelect">
-      <option value="sports">Sports</option>
-      <option value="tech">Tech</option>
-      <option value="entertainment">Entertainment</option>
-      <option value="cooking">Cooking</option>
-      <option value="love">Love</option>
+    <select id="categorySelect" required>
+      <option value="General">عام</option>
+      <option value="Sports">رياضة</option>
+      <option value="Tech">تكنولوجيا</option>
+      <option value="Entertainment">ترفيه</option>
+      <option value="Cooking">طبخ</option>
+      <option value="Love">حب</option>
     </select><br><br>
     <button type="submit">نشر</button>
     <button type="button" onclick="hideAddPostForm()">إلغاء</button>
@@ -72,34 +73,33 @@ function hideAddPostForm() {
 
 // Add Post
 document.getElementById("postForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const content = document.getElementById("postContent").value;
-  const mediaInput = document.getElementById("mediaInput");
-  const category = document.getElementById("categorySelect").value;
-  const file = mediaInput.files[0];
+    const content = document.getElementById("postContent").value;
+    const mediaInput = document.getElementById("mediaInput");
+    const category = document.getElementById("categorySelect").value;
+    const file = mediaInput.files[0];
 
-  const post = {
-    content: content,
-    category: category,
-    media: null,
-    type: null
-  };
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      post.media = event.target.result;
-      post.type = file.type;
-      savePost(post);
+    const post = {
+        content: content,
+        category: category,
+        media: null,
+        type: null
     };
-    reader.readAsDataURL(file);
-  } else {
-    savePost(post);
-  }
 
-  document.getElementById("postForm").reset();
-  hideAddPostForm();
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            post.media = event.target.result;
+            post.type = file.type;
+            savePost(post);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        savePost(post);
+    }
+
+    document.getElementById("postForm").reset();
 });
 
 // Save Post

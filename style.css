@@ -319,3 +319,65 @@ body.sidebar-open main {
   justify-content: center;
   align-items: center ;
 }
+
+/* تعديل تصميم أزرار الإعجاب والتعليق */
+.post-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-yellow);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.post-actions button:hover {
+  background-color: var(--primary-red);
+}
+
+/* Search Results */
+#searchResults {
+  margin-top: 20px;
+}
+
+#searchResults h3 {
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+#searchResults .post, #searchResults .category-card {
+  border: 1px solid var(--primary-blue);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-cream);
+}
+
+#searchResults .post img, #searchResults .post video,
+#searchResults .category-card img {
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+/* User Info */
+.user-info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}

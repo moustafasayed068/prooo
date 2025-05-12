@@ -10,7 +10,7 @@
 
 
   <main>
-    <form class="form-container" action="#" method="post">
+    <form class="form-container" id="registerForm">
       <h2>Register</h2>
       <label for="username">Username</label>
       <input type="text" id="username" required>
@@ -21,7 +21,10 @@
       <label for="password">Password</label>
       <input type="password" id="password" required>
 
-      <button type="submit">Register</button>
+      <label for="profilePic">Profile Picture</label>
+      <input type="file" id="profilePic" accept="image/*">
+
+      <button type="submit"><a href="login.html">Register</a></button>
     </form>
   </main>
   <script src="script.js"></script>

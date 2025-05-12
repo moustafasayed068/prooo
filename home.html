@@ -19,7 +19,7 @@
     <li><a href="messanger.html"><i class="fab fa-facebook-messenger"></i> <span>Messenger</span></a></li>
     <li><a href="Profile.html"><i class="fas fa-user"></i> <span>Profile</span></a></li>
     <li><a href="categorys.html"><i class="fas fa-list"></i> <span>categorys</span></a></li>
-    <li><i class="fas fa-sign-out-alt"></i> <span>Logout</span></li>
+    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
   </ul>
 </div>
 
@@ -30,7 +30,9 @@
       <i class="fas fa-search" onclick="toggleSearch()"></i>
 
       <!-- Search input -->
-      <input type="text" id="searchInput" placeholder="اكتب للبحث..." onkeyup="search()" style="display: none;">
+      <input type="text" id="searchInput" placeholder="اكتب للبحث..." onkeyup="search()" style="display: inline-block;">
+
+      <div id="searchResults"></div>
 
       <i class="fab fa-facebook-messenger"></i>
       <a href="post.html"><i class="fas fa-plus-circle" title="Add Post"></i></a>
@@ -39,10 +41,19 @@
   </nav>
 </header>
 
+<!-- User Info -->
+<div class="user-info" id="userInfo">
+  <img id="userProfilePic" src="" alt="Profile Picture" style="width: 40px; height: 40px; border-radius: 50%;">
+  <span id="userName"></span>
+</div>
+
 <!-- Main Content -->
 <main>
   <h1>Welcome to the Forum</h1>
   <p>This is the homepage for our Instagram-like forum project.</p>
+    <section class="posts">
+      <div id="postList"></div>
+    </section>
 </main>
 
 <!-- JavaScript File -->
